@@ -1,0 +1,10 @@
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:output indent="no" method="xml"/>
+<xsl:key name="kT" match="/root/t" use="string(.)"/>
+<xsl:template match="/">
+  <root2>
+    <t2><xsl:value-of select="key('kT',/root/t[1])"/></t2>
+    <t2><xsl:value-of select="key('kT',/root/t[2])"/></t2>
+  </root2>
+</xsl:template>
+</xsl:stylesheet>
